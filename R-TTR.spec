@@ -4,16 +4,13 @@
 #
 Name     : R-TTR
 Version  : 0.23.4
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/TTR_0.23-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/TTR_0.23-4.tar.gz
 Summary  : Technical Trading Rules
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-TTR-lib = %{version}-%{release}
-Requires: R-curl
-Requires: R-xts
-Requires: R-zoo
 BuildRequires : R-curl
 BuildRequires : R-xts
 BuildRequires : R-zoo
@@ -38,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538143745
+export SOURCE_DATE_EPOCH=1552841828
 
 %install
+export SOURCE_DATE_EPOCH=1552841828
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1538143745
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -77,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library TTR|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  TTR || :
 
 
 %files
@@ -104,7 +100,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/TTR/help/paths.rds
 /usr/lib64/R/library/TTR/html/00Index.html
 /usr/lib64/R/library/TTR/html/R.css
-/usr/lib64/R/library/TTR/libs/symbols.rds
+/usr/lib64/R/library/TTR/tests/doRUnit.R
 /usr/lib64/R/library/TTR/unitTests/output.MA.rda
 /usr/lib64/R/library/TTR/unitTests/output.Oscillators.rda
 /usr/lib64/R/library/TTR/unitTests/output.misc.rda
