@@ -4,7 +4,7 @@
 #
 Name     : R-TTR
 Version  : 0.23.6
-Release  : 37
+Release  : 38
 URL      : https://cran.r-project.org/src/contrib/TTR_0.23-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/TTR_0.23-6.tar.gz
 Summary  : Technical Trading Rules
